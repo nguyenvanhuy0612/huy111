@@ -1,6 +1,4 @@
-echo #! wget https://raw.githubusercontent.com/alok676875/RDP/main/RDP.sh &> /dev/null
-echo #! chmod +x RDP.sh
-echo #! ./RDP.sh
+# wget https://raw.githubusercontent.com/alok676875/RDP/main/RDP.sh &> /dev/null
 
 #! /bin/bash
 printf "Installing RDP Be Patience... " >&2
@@ -21,8 +19,9 @@ sudo systemctl disable lightdm.service
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg --install google-chrome-stable_current_amd64.deb
 sudo apt install --assume-yes --fix-broken
-sudo apt install nautilus nano -y
-sudo apt install vim net-tools iproute2 gedit neofetch -y
+printf "apt install nautilus nano vim net-tools iproute2 gedit neofetch " >&2
+sudo apt install nautilus nano vim net-tools iproute2 gedit neofetch -y
+printf "sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target " >&2
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 sudo adduser ALOK chrome-remote-desktop
 } &> /dev/null &&
